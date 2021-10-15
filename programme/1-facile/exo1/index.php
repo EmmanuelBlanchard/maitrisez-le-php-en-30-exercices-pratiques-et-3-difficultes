@@ -3,7 +3,31 @@ $titre = "Exo 1 : Variables"; //Mettre le nom du titre de la page que vous voule
 ?>
 
 <!-- mettre ici le code -->
+<?php 
+$a = 3;
+$b = 5;
+$c = 7;
 
+echo "<p>";
+    echo "*********** AVANT PERMUTATION *********** <br />"; 
+    echo " A : " . $a . "<br />";
+    echo " B : " . $b . "<br />";
+    echo " C : " . $c . "<br />";
+echo "<p>";
+
+$aTemporaire = $a;
+$a = $b;
+$b = $c;
+$c = $aTemporaire;
+
+echo "<p>";
+    echo "*********** APRES PERMUTATION *********** <br />";
+    echo " A : " . $a . "<br />";
+    echo " B : " . $b . "<br />";
+    echo " C : " . $c . "<br />";
+echo "<p>";
+
+?>
 
 
 <?php
