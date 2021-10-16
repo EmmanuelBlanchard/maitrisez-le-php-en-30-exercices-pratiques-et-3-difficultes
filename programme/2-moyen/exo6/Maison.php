@@ -15,27 +15,15 @@
             $this->surface = $surface;
         }
 
-        public function __toString() {
-            $texte = "Identifiant : " . $this->identifiant ."<br />";
-            $texte .= "Date de création : " . $this->dateCreation . "<br />";
-            $texte .= "Nombre de chambres : " . $this->nombreDeChambres . "<br />";
-            $texte .= "Surface : " . $this->surface . "<br />";
-            return $texte;
-        }
-
         public function getIdentifiant() {
             return $this->identifiant;
-        }
-
-        public function setIdentifiant() {
-            return $this->identifiant = $identifiant;
         }
 
         public function getDateCreation() {
             return $this->dateCreation;
         }
 
-        public function setDateCreation() {
+        public function setDateCreation($dateCreation) {
             return $this->dateCreation = $dateCreation;
         }
 
@@ -43,7 +31,7 @@
             return $this->nombreDeChambres;
         }
 
-        public function setNombreDeChambres() {
+        public function setNombreDeChambres($nombreDeChambres) {
             return $this->nombreDeChambres = $nombreDeChambres;
         }
 
@@ -51,8 +39,16 @@
             return $this->surface;
         }
 
-        public function setSurface() {
+        public function setSurface($surface) {
             return $this->surface = $surface;
+        }
+
+        public function __toString() {
+            $texte = "Identifiant : " . $this->identifiant ."<br />";
+            $texte .= "Date de création : " . $this->dateCreation . "<br />";
+            $texte .= "Nombre de chambres : " . $this->nombreDeChambres . "<br />";
+            $texte .= "Surface : " . $this->surface . "<br />";
+            return $texte;
         }
     }
 ?>
