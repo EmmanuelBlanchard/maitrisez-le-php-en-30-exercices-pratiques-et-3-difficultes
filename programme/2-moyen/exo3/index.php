@@ -4,8 +4,6 @@ $titre = "Exo 3 : Les tableaux associatifs"; //Mettre le nom du titre de la page
 
 <!-- mettre ici le code -->
 <?php
-require("gestionTableau.php");
-
 $animal1 = [
     "nom" => "Mina",
     "age" => 2,
