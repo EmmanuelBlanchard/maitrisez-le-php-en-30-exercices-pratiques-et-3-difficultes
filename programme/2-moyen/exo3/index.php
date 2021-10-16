@@ -65,7 +65,7 @@ function afficherAnimauxParType($tableauxDAnimaux,$type) {
     if(isset($_GET["type"]) && !empty($_GET["type"]) && $_GET["type"]!=="tout") {
         if($_GET["type"] === "chiens") {
             afficherAnimauxParType($tableauxDAnimaux,"chien");
-        } else if ($_GET["type"] === "chat") {
+        } else if ($_GET["type"] === "chats") {
             afficherAnimauxParType($tableauxDAnimaux,"chat");
         } else {
             afficherAnimaux($tableauxDAnimaux);
