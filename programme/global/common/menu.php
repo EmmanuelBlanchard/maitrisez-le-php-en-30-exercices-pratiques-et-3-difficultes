@@ -44,6 +44,10 @@
             <a class="nav-link" href="../../4-cas pratique/2-Catalogue/index.php">
             Catalogue</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../../4-cas pratique/3-Animaux/index.php">
+            Mes animaux</span></a>
+        </li>
     </ul>
     </div>
 </nav>
