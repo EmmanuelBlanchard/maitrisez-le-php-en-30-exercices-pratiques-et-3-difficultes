@@ -9,7 +9,7 @@ $titre = "Partie 4 - La programmation orientée objet"; //Mettre le nom du titre
         public $image;
         public $description;
 
-        public function __construct($nom,$image,$descritpion) {
+        public function __construct($nom,$image,$description) {
             $this->nom = $nom;
             $this->image = $image;
             $this->description = $description;
