@@ -6,20 +6,24 @@ $titre = "Les animaux"; //Mettre le nom du titre de la page que vous voulez
 <?php
 require "MonPDO.class.php";
 require "Animal.class.php";
-// $pdo = MonPDO::getPDO();
-// $requete = "SELECT * FROM animal";
-// $stmt = $pdo->prepare($requete);
-// $stmt->execute();
-// $animaux = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// echo "<pre>";
-// print_r($animaux);
+require "AnimalDAO.class.php";
+$animaux = AnimalDAO::getAnimauxBD();
+foreach($animaux as $animal){
+    $type = AnimalDAO::getTypeAnimal($animal['idAnimal']);
+    $images = AnimalDAO::getImagesAnimal($animal['idAnimal']);
+    new Animal($animal['idAnimal'],$animal['nom'],(int)$animal['age'],(int)$animal['sexe'],$type,$images);
+}
+?>
 
-// new Animal(1,"toto",23,true,"chien","");
-// new Animal(1,"titi",23,true,"chien","");
-// foreach(Animal::$mesAnimaux as $animal) {
-//     echo $animal->getNom() . "<br />";
-// }
-
+<?php 
+foreach(Animal::$mesAnimaux as $animal){
+    echo $animal->getNom() . "<br />";
+    echo $animal->getType() . "<br />";
+    foreach($animal->getImages() as $image){
+        echo $image['libelle'] . "<br />";
+        echo $image['url'] . "<br />";
+    }
+}
 ?>
 
 <?php
