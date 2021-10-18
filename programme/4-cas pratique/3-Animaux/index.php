@@ -4,6 +4,9 @@ $titre = "Les animaux"; //Mettre le nom du titre de la page que vous voulez
 
 <!-- mettre ici le code -->
 <?php
+/** 
+ * CONTROLLER
+ */
 require "MonPDO.class.php";
 require "Animal.class.php";
 require "AnimalDAO.class.php";
@@ -15,16 +18,42 @@ foreach($animaux as $animal){
 }
 ?>
 
-<?php 
-foreach(Animal::$mesAnimaux as $animal){
-    echo $animal->getNom() . "<br />";
-    echo $animal->getType() . "<br />";
-    foreach($animal->getImages() as $image){
-        echo $image['libelle'] . "<br />";
-        echo $image['url'] . "<br />";
-    }
-}
+
+<?php
+/** 
+ * VIEW
+ */
 ?>
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Age</th>
+            <th scope="col">Sexe</th>
+            <th scope="col">Type</th>
+            <th scope="col">Images</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach(Animal::$mesAnimaux as $animal){ ?>
+           <tr>
+                <td style="vertical-align:middle"><?= $animal->getId() ?></td>
+                <td style="vertical-align:middle"><?= $animal->getNom() ?></td>
+                <td style="vertical-align:middle"><?= $animal->getAge() ?></td>
+                <td style="vertical-align:middle"><?= ($animal->getSexe() ===0) ? "Femelle" : "Mâle"; ?></td>
+                <td style="vertical-align:middle"><?= $animal->getType() ?></td>
+                <td style="width:200px" class="text-center">
+                    <?php foreach ($animal->getImages() as $image) : ?>
+                        <img src="sources/<?= $image['url'] ?>" alt="<?= $image['libelle'] ?>" style="max-height:150px;" class="img-thumbnail img-fluid"/>
+                    <?php endforeach; ?>
+                </td>
+           </tr>
+    <?php }?>
+    </tbody>
+</table>
+
 
 <?php
 /************************
