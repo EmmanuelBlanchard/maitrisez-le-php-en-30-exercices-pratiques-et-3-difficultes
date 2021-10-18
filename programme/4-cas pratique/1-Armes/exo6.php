@@ -38,12 +38,10 @@ $titre = "Partie 6 - La POO"; //Mettre le nom du titre de la page que vous voule
 
         public function getNom() {return $this->nom;}
         public function getLevel() {return $this->level;}
-        public function getImage() {return $this->image;}
         public function getDescription() {return $this->description;}
 
         public function setNom($nom) {$this->nom = $nom;}
         public function setLevel($level) {$this->level = $level;}
-        public function setImage($image) {$this->image = $image;}
         public function setDescription($description) {$this->description = $description;}
 
     }
